@@ -25,6 +25,11 @@ namespace MusicOrganizer.Models
       CurrentId ++;
     }
 
+    public void AddArtist(Artist artist)
+    {
+      Artists.Add(artist);
+    }
+
     public static Record Find(int id)
     {
       for(int i = 0; i < Records.Count; i++ )

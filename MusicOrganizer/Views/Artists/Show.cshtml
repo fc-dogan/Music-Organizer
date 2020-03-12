@@ -1,0 +1,9 @@
+@using MusicOrganizer.Models;
+
+<h1>Artist Item Details: </h1>
+
+<h2>@Model["artist"].Name</h2>
+<h3>Record: @Model["record"].Title</h3>
+
+<a href='/records/@Model["record"].Id/artists/new'>Add another artist</a>
+<a href='/records'>View all records</a>
