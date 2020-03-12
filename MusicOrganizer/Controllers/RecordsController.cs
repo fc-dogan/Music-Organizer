@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MusicOrganizer.Models;
 using System.Collections.Generic;
+using System;
 
 namespace MusicOrganizer.Controllers
 {
@@ -35,14 +36,14 @@ namespace MusicOrganizer.Controllers
       List<Artist> artistInRecord = selectedRecord.Artists;
       music.Add("record", selectedRecord);
       music.Add("artists", artistInRecord);
-      return View("Show", music);
+      return View(music);
     }
 
     [HttpPost("/records/{recordId}/artists")]
-    public ActionResult Create(int recordsId, string artistName)
+    public ActionResult Create(int recordId, string artistName)
     {
       Dictionary<string, object> music = new Dictionary<string, object>();
-      Record foundRecord = Record.Find(recordsId);
+      Record foundRecord = Record.Find(recordId);
       Artist newArtist = new Artist(artistName);
       foundRecord.AddArtist(newArtist);
       List<Artist> artistInRecord = foundRecord.Artists;

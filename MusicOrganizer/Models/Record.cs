@@ -10,7 +10,7 @@ namespace MusicOrganizer.Models
     public static int CurrentId {get; set;} = 0;
     public List<Artist> Artists {get; set;}
 
-    public static List<Record> Records {get; } = new List<Record> {};
+    public static List<Record> Records {get; set;} = new List<Record> {};
 
     public Record(string title)
     {
@@ -18,6 +18,7 @@ namespace MusicOrganizer.Models
       Records.Add(this);
       IncrementId();
       Id = CurrentId;
+      Artists = new List<Artist> {};
     }
 
     public static void IncrementId()

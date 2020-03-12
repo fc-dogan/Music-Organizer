@@ -8,7 +8,7 @@ namespace MusicOrganizer.Models
     public string Name {get; set;}
     public int Id {get; }
     public static int CurrentId {get; set;} = 0;
-    public static List<Artist> Instance {get; } = new List<Artist> {};
+    public static List<Artist> Instance {get; set;} = new List<Artist> {};
 
     public Artist(string name)
     {
